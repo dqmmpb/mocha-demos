@@ -10,6 +10,14 @@ function Foo(bar) {
   this.bar = bar;
 }
 
+function goodFn() {
+
+}
+
+function badFn() {
+  throw new Error('I\'m a bad guy');
+}
+
 var foo = new Foo('baz');
 
-module.exports = {add, foo, Foo};
+module.exports = {add, foo, Foo, goodFn, badFn};
