@@ -199,7 +199,21 @@ describe('七、加法函数的测试(含嵌套describe.only，不含同级it.on
 });
 
 ```
-After中给出了对执行情况的解释
+after中给出了对执行情况的解释
+
+#### 5. Chai.js的文档bug
+
+```javascript
+// other code
+expect(fn).to.throw(ReferenceError).and.not.throw(/good function/);
+```
+上述代码执行有问题，参看[issue914][issue914]
+
+```javascript
+     AssertionError: expected [ReferenceError: This is a bad function] to be a function
+```
+
+[issue914][issue914]中据说已经修改了该问题
 
 #### 其他
 
@@ -227,3 +241,4 @@ After中给出了对执行情况的解释
 [promise]: http://www.jianshu.com/p/063f7e490e9a
 [Symbol]: http://web.jobbole.com/82957
 [NaN]: http://web.jobbole.com/85333
+[issue914]: https://github.com/chaijs/chai/issues/914
